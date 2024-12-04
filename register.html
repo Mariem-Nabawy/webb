@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <ul class="navbar">
+            <li class="logo-item"><img src="images/MEF_LOGO.jpg" class="logo" alt="Logo"></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="coaches.html">Coaches</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Register Section -->
+    <section>
+        <h2>Register</h2>
+        <form id="register-form" class="custom-form" method="POST" onsubmit="handleRegisterForm(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="National ID" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <select name="subscription" required>
+                <option value="1-month">1 Month</option>
+                <option value="3-months">3 Months</option>
+                <option value="6-months">6 Months</option>
+                <option value="12-months">12 Months</option>
+            </select>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a>.</p>
+    </section>
+    <script>
+        // Include the same JavaScript handling for the form as before
+    </script>
+</body>
+</html>
