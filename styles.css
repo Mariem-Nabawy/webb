@@ -1,0 +1,529 @@
+/* Root Variables for Color Scheme */
+:root {
+    --primary-color: #ff5e62;
+    --secondary-color: #333;
+    --background-color: #1e1e1e;
+    --text-color: #fff;
+    --accent-color: #ff9966;
+    --hover-color: #e6524d; /* Hover color for interactions */
+    --card-bg-color: #2b2b2b; /* Background color for cards */
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Header Styling for Unified Background */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-color); /* Unified background */
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px; /* Adjust height for larger logo */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* Space between menu items */
+}
+
+/* Home + Logo Item Styling */
+.home-logo-item {
+    display: flex;
+    align-items: center; /* Center-align logo and "Home" text */
+    gap: 15px; /* Space between logo and text */
+}
+
+.home-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+}
+
+/* Logo Styling */
+.logo {
+    height: 80px; /* Match menu height for blending */
+    width: auto; /* Maintain aspect ratio */
+    border: none; /* Remove any border */
+    background: none; /* No background to avoid visual separation */
+    box-shadow: none; /* Remove any shadow */
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+/* Navbar Buttons */
+.navbar li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px; /* Subtle rounding for uniformity */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-size: 1rem;
+    line-height: 80px; /* Center-align text vertically */
+    background: none; /* Blend button background with header */
+}
+
+.navbar li a:hover {
+    background: var(--primary-color); /* Highlight on hover */
+    color: #fff;
+    border-radius: 20px; /* Subtle rounding for hover effect */
+}
+
+/* Hover Effects for Home + Logo Integration */
+.home-logo-item:hover .logo {
+    transform: scale(1.1); /* Slight enlargement for emphasis */
+}
+
+.home-logo-item:hover .home-link {
+    color: var(--primary-color); /* Match hover color for uniformity */
+}
+
+/* Optional Subtle Gradient for Header */
+header {
+    background: linear-gradient(to right, #333, #444); /* Smooth gradient */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        height: auto; /* Adjust header height for smaller screens */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack buttons on smaller screens */
+        gap: 15px; /* Reduce spacing for compact design */
+    }
+
+    .logo {
+        height: 60px; /* Smaller logo for smaller screens */
+    }
+
+    .navbar li a {
+        font-size: 0.9rem; /* Adjust font size for better fit */
+        padding: 8px 15px;
+        line-height: normal;
+    }
+}
+
+/* Hover Effects for Home-Link */
+.home-logo-item:hover .logo {
+    transform: scale(1.2); /* Slight enlargement on hover */
+    box-shadow: 0 8px 20px rgba(255, 94, 98, 0.7); /* Glow for emphasis */
+}
+
+.home-logo-item:hover .home-link {
+    color: var(--primary-color);
+}
+
+/* Unified Gradient Background for Header */
+header {
+    background: linear-gradient(to right, #333, #444); /* Subtle gradient */
+}
+
+/* Optional Glow for Buttons on Hover */
+.navbar li a:hover {
+    box-shadow: 0 0 10px rgba(255, 94, 98, 0.7); /* Glow effect */
+}
+
+/* Optional Floating Effect for Logo */
+.logo:hover {
+    transform: scale(1.2) translateY(-5px); /* Float upwards slightly */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        height: auto; /* Allow header to adapt to smaller screens */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack buttons on smaller screens */
+        gap: 15px; /* Reduce gap for compact design */
+    }
+
+    .logo {
+        width: 60px; /* Smaller logo size for mobile */
+    }
+
+    .navbar li a {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        padding: 8px 15px; /* Adjust padding for better fit */
+    }
+}
+/* Parallax Section */
+.parallax {
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 2rem;
+}
+
+/* Spacing and adjustments for better separation from the ceiling */
+body {
+    padding-top: 5px; /* Reduced by 80%, originally it was 80px */
+}
+
+/* Hero Section - Fix video size to cover the screen */
+#hero {
+    position: relative;
+    height: 100vh; /* Full height of the viewport */
+    width: 100%;  /* Ensure it spans the entire width */
+    overflow: hidden;
+    text-align: center;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   /* Ensures full width */
+    height: 100%;  /* Ensures full height */
+    object-fit: cover; /* Ensures video covers the entire screen */
+    z-index: -1;
+    filter: brightness(0.7); /* Enhance text visibility */
+}
+
+/* Coaches Page - Flip Card Design */
+#coaches {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+#coaches h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+#coaches p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+}
+
+.coach-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.coach-tab {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    position: relative;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.coach-tab:hover {
+    transform: scale(1.05);
+}
+
+.coach-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.coach-card:hover {
+    transform: rotateY(180deg);
+}
+
+.image-front, .info-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.image-front {
+    background-size: cover;
+    background-position: center;
+}
+
+.info-back {
+    background: var(--primary-color);
+    color: var(--text-color);
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.coach-tab:hover .image-front {
+    transform: rotateY(180deg);
+}
+
+.coach-tab:hover .info-back {
+    transform: rotateY(0deg);
+}
+
+.coach-info h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.coach-info p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Subscription Plans */
+#subscription-plans {
+    padding: 50px 20px;
+    text-align: center;
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.plan-card {
+    background: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    height: 380px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
+    color: var(--text-color);
+}
+
+.plan-card:hover {
+    transform: scale(1.05);
+    background: var(--primary-color);
+}
+
+.plan-card h2 {
+    margin-bottom: 10px;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.plan-button {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: auto;
+}
+
+.plan-button:hover {
+    background: var(--accent-color);
+}
+
+/* Fix for Login Menu */
+.navbar li#login-menu {
+    display: block;
+}
+
+/* Login/Register Adjustments */
+#login,
+#register {
+    margin-top: 100px;
+    text-align: center;
+}
+
+#login h2,
+#register h2 {
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.custom-form {
+    background: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    margin: 0 auto;
+    color: var(--text-color);
+}
+
+.custom-form input,
+.custom-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.custom-form button {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.custom-form button:hover {
+    background: var(--hover-color);
+}
+@media (max-width: 768px) {
+    .navbar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px; /* Smaller logo size for mobile */
+        }
+    }
+
+/* Responsive Design */
+/*@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .custom-form {
+        max-width: 90%;
+    }
+}
+
+/* Coaches Preview Section */
+#coaches-preview {
+    padding: 50px 20px;
+    text-align: center;
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.coach-preview-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.coach-preview {
+    background-color: var(--card-bg-color);
+    width: 300px; /* Ensures the card has a consistent width */
+    height: 400px; /* Sets a fixed height for the card */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden; /* Prevents overflow of content */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    background-size: cover;
+    background-position: center; /* Ensures images are centered */
+}
+
+.coach-preview img {
+    width: 100%;
+    height: 60%; /* Controls the image height within the card */
+    object-fit: cover; /* Ensures the image does not get stretched */
+    border-radius: 10px;
+}
+
+.coach-preview .coach-info {
+    padding: 10px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for better visibility */
+    border-radius: 0 0 10px 10px;
+}
+
+.coach-preview:hover {
+    transform: scale(1.05);
+}
+
+.view-all-coaches {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.view-all-coaches:hover {
+    background: var(--accent-color);
+}
